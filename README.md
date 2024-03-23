@@ -11,58 +11,36 @@ Open [http://localhost:8080](http://localhost:8080) with your browser to see the
 
 # Learn More
 
-**The following section explains what have been done and what remains to be done to be a project ready for MEP & delivery. Because of the time constrain, I was not able to do everything I wanted. But I would be very happy to discuss it together as it would be necessary to implement it**
+**Below, I'll detail what has been accomplished and what aspects are yet to be implemented for the project's readiness for MEP & delivery. Due to time constraints, I couldn't cover everything I wanted, but I'm eager to discuss further in the interview. I think it can be very interesting to discuss all the aspects of this project. For this purpose, I gathered bellow the mains points highlighted by the ADR**
 
-## What I have done in this test
+### Accomplishments
+In this technical test, I focused on creating a simple dashboard for displaying industrial information using Next.js's app/router to optimize performance. By leveraging server components, we adopt a server-side-first approach to enhance rendering performance. Although this approach adds complexity to the project's architecture, it allows for a balanced optimization between server and client components. Data can be securely fetched and cached from server components, optimizing user experience, while client components facilitate user interaction.
 
-In this test, I focused on the creation of a simple dashboard for the display of industrial information.
-I used the app/router from next to optimize the performances. The server components allow us to have an approach serverside first and optimize the performances.
-This approach complexifies a little the architecture of the project, because we need to balance between the server components and client components.
-Data can be fetched securely, and cached from server components optimizing the rendering performances for the user, while the client components are necessary to interact with the user. There components would call the route handler (/api) -> Read more https://nextjs.org/docs/app/building-your-application/routing/route-handlers.
+I prioritized building a clean and scalable architecture over implementing user profile management and route handling in this test.
 
-I didn't get into the creation of these routes and the management of user profile as I prefered prepare a clean and scalable architecture for the project.
+### Key features of the project include:
 
-I have created a NextJs application that gives us the opportunity to create server components and client components to optimize the loading experience while allowing to user to interact with his application.
+Utilization of Next.js to create server components and client components for optimized loading and user interaction.
+Exploration of server components, client components, and API handlers.
 
-This test explores the creation of server components, client components, and api handlers.
+## Remaining Tasks
+Testing
+Testing coverage is critical for ensuring the reliability of the application. Although I couldn't perform Test-Driven Development (TDD) due to time constraints, I prioritize thorough testing before the MEP phase.
 
-## What remains to be done
+### Proposed testing strategies include:
 
-### The tests
+- **Unit Testing**: High-level tests for Next.js components to minimize duplication and ensure user stories are met. Integration with tools like SonarCloud and eslint-plugin-testing-library for code coverage and best practices adherence.
+- **Integration Testing**: Verification of server responses to ensure API health and correct data retrieval.
+- **End-to-End Testing with Cypress**: Covering critical user stories to validate the application's main functionalities.
 
-The components are not tested as I didn't take the time to do TDD work. This part is for me critical and I would not allow a MEP without proper testing coverage. To be discussed in interview?
+## Authentication
+Implementation of authentication using next/auth to protect user data. Consideration of stronger authentication mechanisms, such as Active Directory security groups and Akamai, for comprehensive user authentication management.
 
-I would have liked to implement 3 testing strategies:
+## Tracking & Logging
+Inclusion of tracking mechanisms for measuring success KPIs and logging for debugging and performance analysis purposes.
 
-###### Unit testing for the components
-- These tests would be better high level for NextJs components in order to minimize duplication. In __tests__ folder, create a 'ConponentName.test.tsx'. Use a setup to render the component and then screen.getByText('') to find your elements. Assess your user stories.
-- The tool sonarCloud is really interesting for testing the code coverage on PRs (possibility to make it mandatory and to determin a minimum coverage)
-- eslint-plugin-testing-library is an ESLint plugin for Testing Library that helps users to follow best practices and anticipate common mistakes when writing tests. It is very useful!
-- In order to avoid mocking, I generally use MSW (avoiding too big solicitation of the API).
+## Project Settings (Linter, Prettier)
+Configuration of project standards, including linting and formatting rules, to ensure consistency and alignment across team members.
 
-###### Integration testing to test the server response
-Because API response needs to be fitting the intrface with the front to display data, the integration tests need to  run to make sure the server is healty and the data returned is correct. These tests sollicitate the API and can be run as chon.
-
-###### End-to-End testing with cypress
-These tests are done to tests the main user stories so the critical paths are covered. The main difficulty is the time of execution, as they can become a bottleneck in the PR merging process if blocker. If not, a team strategy has to be determined to maintain them.
-
-### The authentification
-
-Using next/auth, the authentification is necessary to protect the user's data.
-I will protect the front byt need to be applied as well as a middleware next to protect the route handlers.
-I guess that a stronger authentification manager system is used at Yxir. I have experience with Active Directory security groups & Akamai for user authentification gestion.
-
-### The tracking & logging
-
-The tracking is mandatory in order to measure the success KPI of development.
-The logging is mandatory to debugg in prod and be reactive in case of an issue (as well to analyse our performances for example...)
-
-### The project setting (linter, prettier)
-
-The setting of a project take a little time in order to fromalize the standards and align everyone on the way to work and code.
-I didn't do much, there is a lot of opportunities but I would be happy to discuss it in the interview.
-When working on a project with the team, need to create a branch for each ticket & PR before validation and merge.
-
-### The connexion to the CI/CD
-
-deployment automatic with github action (on github pages). I didn't have the time to implement it.
+## CI/CD Integration
+Automatic deployment using GitHub Actions (GitHub Pages). Although not implemented yet, setting up CI/CD pipelines is crucial for streamlining development workflows.
