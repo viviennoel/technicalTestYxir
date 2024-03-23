@@ -13,7 +13,7 @@ const ClientChartPie = ({ data }: { data: { name: string; y: number }[] }) => {
   const year = searchParams.get('year');
 
   useEffect(() => {
-    fetch('/api/productionSource', {
+    year && fetch('/api/productionSource', {
       method: 'POST',
       body: JSON.stringify({ year }),
       headers: {
@@ -30,7 +30,7 @@ const ClientChartPie = ({ data }: { data: { name: string; y: number }[] }) => {
         );
       })
       .catch((err) => console.log(err));
-  }, [searchParams]);
+  }, []);
 
   const title = getTitleFromLabel(Dataset.PRODUCTION_SOURCE);
 
@@ -78,17 +78,13 @@ const ClientChartPie = ({ data }: { data: { name: string; y: number }[] }) => {
       enabled: false,
     },
   };
-
-  if (clientData.length > 0) {
+  
     return (
       <div>
         <h3 className="m-2 text-center">Year {year ?? 2022}</h3>
-        <HighchartsReact highcharts={Highcharts} options={options} />
+          <HighchartsReact highcharts={Highcharts} options={options} />
       </div>
     );
-  }
-
-  return null;
 };
 
 export default ClientChartPie;

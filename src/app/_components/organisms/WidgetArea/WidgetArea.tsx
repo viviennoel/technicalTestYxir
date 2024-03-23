@@ -1,10 +1,8 @@
 'use client';
 
-import { Widgets } from '@/app/_utils/types/components';
 import DynamicCard from '@/app/_components/molecules/Card/Card';
 import styles from './WidgetArea.module.scss';
 import { useSearchParams } from 'next/navigation';
-import dynamic from 'next/dynamic';
 import { Dataset } from '@/app/_utils/types/datasetEDF';
 
 // Feature of drag/drop would be added here using React DnD
