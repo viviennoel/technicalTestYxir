@@ -1,0 +1,13 @@
+@use '@/app/_utils/styles/variables.scss';
+
+.wrapper{
+    min-height:61vh;
+}
+
+.card {
+    background-color: variables.$color-white;
+    box-shadow: variables.$shadow-default;
+    max-width:90vw;
+    width: 400px;
+    height: fit-content;
+}

@@ -1,0 +1,17 @@
+@use './variables.scss';
+
+  @mixin for-phone-only {
+    @media (max-width: variables.$breakpoint-xsmall) { @content; }
+  }
+  @mixin for-tablet-portrait-up {
+    @media (min-width: variables.$breakpoint-small) { @content; }
+  }
+  @mixin for-tablet-only {
+    @media (min-width: variables.$breakpoint-medium ) and (max-width: 992px) { @content; }
+  }
+  @mixin for-tablet-landscape-up {
+    @media (min-width: variables.$breakpoint-large) { @content; }
+  }
+  @mixin for-desktop-up {
+    @media (min-width: $breakpoint-extra-large) { @content; }
+  }

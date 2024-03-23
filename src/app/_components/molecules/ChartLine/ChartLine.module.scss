@@ -1,0 +1,8 @@
+@use '@/app/_utiils/styles/variables.scss';
+
+.DynamicCard {
+    background-color: variables.$color-white;
+    box-shadow: variables.$shadow-default;
+    min-height: 400px;
+    max-width:90vw;
+}

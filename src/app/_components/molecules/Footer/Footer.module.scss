@@ -1,0 +1,13 @@
+@use "@/app/_utils/styles/variables.scss";
+
+.footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    background-color: variables.$color-primary;
+    box-shadow: #727272 0px 0px 9px 0px;
+    padding: 15px 0;
+    color: white;
+    text-align: center;
+}

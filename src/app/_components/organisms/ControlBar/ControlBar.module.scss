@@ -1,0 +1,26 @@
+@use '@/app/_utils/styles/variables.scss';
+@import '@/app/_utils/styles/mixins.scss';
+
+.wrapper{
+    margin-top: 50px;
+    padding: variables.$spacing-medium;
+    width: 100vw;
+    background-color: variables.$color-white;
+    box-shadow: variables.$shadow-default;
+    color: variables.$color-black;
+
+    h3{
+        padding-bottom: variables.$spacing-small;
+    }
+}
+
+.formCheckLabel { 
+    label{
+        padding-right: variables.$spacing-medium;
+    }
+}
+
+.kpi{
+    font-size: 7rem;
+    color: variables.$color-secondary;
+}

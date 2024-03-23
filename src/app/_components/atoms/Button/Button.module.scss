@@ -1,0 +1,55 @@
+.clearBtn {
+    background-color: white;
+    color: black;
+    border: solid 2px white;
+    min-width: 200px;
+    transition: all 1s;
+
+    a {
+        text-decoration: none;
+        color: black;
+        transition: all 1s;
+    }
+
+    &:hover{
+        background-color: black;
+        border: solid 2px white;
+        
+        a{
+            color: white;
+        }
+    }
+}
+
+.darkBtn, .darkBtn:focus, .darkBtn:active {
+    background-color: black;
+    border: solid 2px white;
+    min-width: 200px;
+    transition: all 1s;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+
+    a {
+        text-decoration: none;
+        color: white;
+        transition: all 1s;
+    }
+
+    &:hover{
+        background-color:white;
+        border: solid 2px black;
+        
+        a{
+            color: black;
+        }
+    }
+
+    &:focus{
+        background-color:white;
+        border: solid 2px black;
+        
+        a{
+            color: black;
+        }
+    }
+}
